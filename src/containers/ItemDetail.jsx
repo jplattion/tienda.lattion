@@ -1,11 +1,15 @@
-import React from "react";
-import { Card } from "react-bootstrap";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Card, Button } from "react-bootstrap";
 import ItemCount from "../components/ItemCount";
 
-const ItemDetails = ({ product }) => {
+const ItemDetail = ({ product }) => {
+  const [buyCompleted, setBuyCompleted] = useState(false);
+
   const onAdd = () => {
-    alert(`Gracias por tu compra`);
+    setBuyCompleted(true);
   };
+
   return (
     <>
       <Card style={styles.card}>
@@ -17,7 +21,13 @@ const ItemDetails = ({ product }) => {
             <Card.Text style={styles.cardDescription}> {product.description} </Card.Text>
             <Card.Text style={styles.cardPrice}> $ {product.price} </Card.Text>
             <div>
-              <ItemCount stock={12} onAdd={onAdd} />
+              {buyCompleted ? (
+                <Link to="/cart">
+                  <Button variant="primary">Finalizar Compra</Button>
+                </Link>
+              ) : (
+                <ItemCount stock={12} onAdd={onAdd} />
+              )}
             </div>
           </Card.Body>
         </div>
@@ -26,7 +36,7 @@ const ItemDetails = ({ product }) => {
   );
 };
 
-export default ItemDetails;
+export default ItemDetail;
 
 const styles = {
   row: {
