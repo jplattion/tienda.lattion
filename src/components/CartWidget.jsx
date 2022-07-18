@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { cartContext } from "../context/CartContext";
 
 const CartWidget = () => {
+  const { quantity } = useContext(cartContext);
+
   return (
     <>
       <ShoppingCartIcon style={styles.shoppingCart} />
+      {quantity === 0 ? <></> : <p>{quantity}</p>}
     </>
   );
 };

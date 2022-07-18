@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Card, Button } from "react-bootstrap";
 import ItemCount from "../components/ItemCount";
+import { cartContext } from "../context/CartContext";
 
 const ItemDetail = ({ product }) => {
   const [buyCompleted, setBuyCompleted] = useState(false);
+  const { addItem } = useContext(cartContext);
 
-  const onAdd = () => {
+  const onAdd = (count) => {
     setBuyCompleted(true);
+    addItem({ ...product, qty: count });
   };
 
   return (

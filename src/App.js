@@ -5,18 +5,21 @@ import ItemListContainer from "./containers/ItemListContainer";
 import ItemDetailContainer from "./containers/ItemDetailContainer";
 import Cart from "./components/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ContextProvider from "./context/CartContext";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <NavBar storeName="Tienda Lattion" />
-        <Routes>
-          <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
-          <Route path="/category/:categoryId" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
-          <Route path="/product/:productId" element={<ItemDetailContainer greeting="Detalle del producto" />} />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
+        <ContextProvider>
+          <NavBar storeName="Tienda Lattion" />
+          <Routes>
+            <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
+            <Route path="/category/:categoryId" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
+            <Route path="/product/:productId" element={<ItemDetailContainer greeting="Detalle del producto" />} />
+            <Route path="/cart" element={<Cart />} />
+          </Routes>
+        </ContextProvider>
       </BrowserRouter>
     </>
   );

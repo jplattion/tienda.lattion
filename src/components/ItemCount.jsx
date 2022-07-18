@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 import { Add, Remove } from "@mui/icons-material";
+import Swal from "sweetalert2";
 
 const ItemCount = ({ stock, initial = 1, onAdd }) => {
   const [count, setCount] = useState(initial);
 
   const addition = () => {
     count < stock && setCount(count + 1);
-    count >= stock && alert("Se llego al limite del stock.");
+    count >= stock && Swal.fire("Se llego al límite del stock disponible.");
   };
 
   const substraction = () => {
@@ -16,7 +17,6 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
 
   const addToCart = () => {
     onAdd(count);
-    console.log(count);
   };
 
   return (
