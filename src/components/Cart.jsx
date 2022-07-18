@@ -4,9 +4,7 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const cart = () => {
-  const { products } = useContext(cartContext);
-
-  const { clearCart, removeItem, totalSum } = useContext(cartContext);
+  const { products, clearCart, removeItem, totalSum } = useContext(cartContext);
 
   return (
     <>
@@ -27,10 +25,12 @@ const cart = () => {
               </Button>
             </Card>
           ))}
-          <span>Precio Total $ {totalSum}</span>
-          <Button variant="secondary" onClick={clearCart}>
-            Limpiar carrito
-          </Button>
+          <div>
+            <span>Precio Total ${totalSum}</span>
+            <Button variant="secondary" onClick={clearCart}>
+              Limpiar carrito
+            </Button>
+          </div>
         </>
       )}
     </>

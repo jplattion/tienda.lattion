@@ -21,20 +21,18 @@ const ContextProvider = ({ children }) => {
 
   const addItem = (product) => {
     if (isInCart(product.id)) {
-      const found = products.find((p) => p.id === product.id);
-      const index = products.indexOf(found);
       const productsCopy = [...products];
-      productsCopy[index].qty += product.qty;
+      const found = productsCopy.find((p) => p.id === product.id);
+      found.qty += product.qty;
       setProducts(productsCopy);
-      console.log("if suma");
     } else {
       setProducts([...products, product]);
-      console.log("else nuevo");
     }
   };
 
   const removeItem = (id) => {
-    setProducts(products.filter((product) => product.id !== id));
+    const newList = products.filter((product) => product.id !== id);
+    setProducts(newList);
   };
 
   const clearCart = () => {
@@ -43,12 +41,19 @@ const ContextProvider = ({ children }) => {
   };
 
   const isInCart = (id) => {
-    products.some((product) => product.id === id);
+    return products.some((product) => product.id === id);
   };
 
-  const totalSum = () => {};
+  const totalSum = () => {
+    let total = 0;
+    products.forEach((product) => {
+      let price = product.qty * product.price;
+      total = total + price;
+    });
+    return total;
+  };
 
-  return <Provider value={{ products, addItem, removeItem, clearCart, quantity }}>{children}</Provider>;
+  return <Provider value={{ products, addItem, removeItem, clearCart, quantity, totalSum }}>{children}</Provider>;
 };
 
 export default ContextProvider;
