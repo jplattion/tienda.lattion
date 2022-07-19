@@ -20,7 +20,7 @@ const cart = () => {
               <Card.Img variant="top" src={product.image} style={styles.cardImage} />
               <span>Precio Unitario ${product.price}</span>
               <span>{product.qty} Unidades</span>
-              <Button variant="secondary" onClick={removeItem()}>
+              <Button variant="secondary" onClick={() => removeItem(product.id)}>
                 Eliminar del Carrito
               </Button>
             </Card>

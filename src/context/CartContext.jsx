@@ -32,7 +32,6 @@ const ContextProvider = ({ children }) => {
 
   const removeItem = (id) => {
     setProducts(products.filter((product) => product.id !== id));
-    console.log(`remueve el id ${id}`);
   };
 
   const clearCart = () => {
