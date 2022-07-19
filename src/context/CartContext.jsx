@@ -31,8 +31,8 @@ const ContextProvider = ({ children }) => {
   };
 
   const removeItem = (id) => {
-    const newList = products.filter((product) => product.id !== id);
-    setProducts(newList);
+    setProducts(products.filter((product) => product.id !== id));
+    console.log(`remueve el id ${id}`);
   };
 
   const clearCart = () => {
@@ -45,12 +45,7 @@ const ContextProvider = ({ children }) => {
   };
 
   const totalSum = () => {
-    let total = 0;
-    products.forEach((product) => {
-      let price = product.qty * product.price;
-      total = total + price;
-    });
-    return total;
+    return products.reduce((total, product) => total + product.qty * product.price, 0);
   };
 
   return <Provider value={{ products, addItem, removeItem, clearCart, quantity, totalSum }}>{children}</Provider>;

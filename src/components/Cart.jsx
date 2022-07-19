@@ -20,13 +20,13 @@ const cart = () => {
               <Card.Img variant="top" src={product.image} style={styles.cardImage} />
               <span>Precio Unitario ${product.price}</span>
               <span>{product.qty} Unidades</span>
-              <Button variant="secondary" onClick={removeItem}>
+              <Button variant="secondary" onClick={removeItem()}>
                 Eliminar del Carrito
               </Button>
             </Card>
           ))}
           <div>
-            <span>Precio Total ${totalSum}</span>
+            <span>Precio Total ${totalSum()}</span>
             <Button variant="secondary" onClick={clearCart}>
               Limpiar carrito
             </Button>
