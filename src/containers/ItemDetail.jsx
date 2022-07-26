@@ -11,11 +11,12 @@ const ItemDetail = ({ product }) => {
   const onAdd = (count) => {
     setBuyCompleted(true);
     addItem({ ...product, qty: count });
+    console.log(product);
   };
 
   return (
     <>
-      <Card style={styles.card}>
+      <Card style={styles.card} key={product.id}>
         <Card.Title style={styles.cardTitle}> {product.title} </Card.Title>
         <div style={styles.row}>
           <Card.Img variant="top" src={product.links.pictureUrl} style={styles.cardImage} />
