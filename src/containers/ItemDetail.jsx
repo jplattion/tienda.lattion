@@ -18,18 +18,17 @@ const ItemDetail = ({ product }) => {
       <Card style={styles.card}>
         <Card.Title style={styles.cardTitle}> {product.title} </Card.Title>
         <div style={styles.row}>
-          <Card.Img variant="top" src={product.image} style={styles.cardImage} />
+          <Card.Img variant="top" src={product.links.pictureUrl} style={styles.cardImage} />
           <Card.Body>
-            <Card.Text style={styles.cardId}> ID: {product.id}</Card.Text>
             <Card.Text style={styles.cardDescription}> {product.description} </Card.Text>
-            <Card.Text style={styles.cardPrice}> $ {product.price} </Card.Text>
+            <Card.Text style={styles.cardPrice}> $ {product.store.price} </Card.Text>
             <div>
               {buyCompleted ? (
                 <Link to="/cart">
                   <Button variant="primary">Finalizar Compra</Button>
                 </Link>
               ) : (
-                <ItemCount stock={12} onAdd={onAdd} />
+                <ItemCount stock={product.store.stock} onAdd={onAdd} />
               )}
             </div>
           </Card.Body>

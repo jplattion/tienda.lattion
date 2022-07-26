@@ -44,7 +44,7 @@ const ContextProvider = ({ children }) => {
   };
 
   const totalSum = () => {
-    return products.reduce((total, product) => total + product.qty * product.price, 0);
+    return products.reduce((total, product) => total + product.qty * product.store.price, 0);
   };
 
   return <Provider value={{ products, addItem, removeItem, clearCart, quantity, totalSum }}>{children}</Provider>;

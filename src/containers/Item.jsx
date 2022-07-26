@@ -8,8 +8,8 @@ const Item = ({ product }) => {
       <Card style={styles.card}>
         <Link to={`/product/${product.id}`} style={styles.cardTitle}>
           <Card.Title> {product.title} </Card.Title>
-          <Card.Img variant="top" src={product.image} style={styles.cardImage} />
-          <Card.Text style={styles.cardPrice}>${product.price}</Card.Text>
+          <Card.Img variant="top" src={product.links.pictureUrl} style={styles.cardImage} />
+          <Card.Text style={styles.cardPrice}>${product.store.price}</Card.Text>
           <Card.Text style={styles.cardDescription}>Haz clic para ver el detalle.</Card.Text>
         </Link>
       </Card>

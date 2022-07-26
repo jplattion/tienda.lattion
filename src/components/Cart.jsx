@@ -17,8 +17,8 @@ const cart = () => {
           {products.map((product) => (
             <Card key={product.id}>
               <h2 style={styles.cardTitle}>{product.title}</h2>
-              <Card.Img variant="top" src={product.image} style={styles.cardImage} />
-              <span>Precio Unitario ${product.price}</span>
+              <Card.Img variant="top" src={product.links.pictureUrl} style={styles.cardImage} />
+              <span>Precio Unitario ${product.store.price}</span>
               <span>{product.qty} Unidades</span>
               <Button variant="secondary" onClick={() => removeItem(product.id)}>
                 Eliminar del Carrito

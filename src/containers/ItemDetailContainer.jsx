@@ -3,6 +3,8 @@ import ItemDetail from "./ItemDetail";
 import backgroundMain from "../assets/backgroundMain.svg";
 import Spinner from "../components/Spinner";
 import { useParams } from "react-router-dom";
+import { db } from "../firebase/firebase";
+import { getDoc, collection, doc } from "firebase/firestore";
 const viewport = { height: document.documentElement.clientHeight };
 
 const ItemDetailContainer = ({ greeting }) => {
@@ -11,15 +13,18 @@ const ItemDetailContainer = ({ greeting }) => {
   const { productId } = useParams();
 
   useEffect(() => {
-    fetch(`https://fakestoreapi.com/products/${productId}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data))
+    const productCollection = collection(db, "games");
+    const refDoc = doc(productCollection, productId);
+    getDoc(refDoc)
+      .then((result) => {
+        const product = {
+          id: doc.id,
+          ...result.data(),
+        };
+        setProduct(product);
+      })
       .catch((err) => console.log(err))
-      .finally(() =>
-        setTimeout(() => {
-          setShow(false);
-        }, 2000)
-      );
+      .finally(() => setShow(false));
   }, [productId]);
 
   return (

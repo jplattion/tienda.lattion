@@ -9,19 +9,17 @@ import ContextProvider from "./context/CartContext";
 
 function App() {
   return (
-    <>
-      <BrowserRouter>
-        <ContextProvider>
-          <NavBar storeName="Tienda Lattion" />
-          <Routes>
-            <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
-            <Route path="/category/:categoryId" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
-            <Route path="/product/:productId" element={<ItemDetailContainer greeting="Detalle del producto" />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
-        </ContextProvider>
-      </BrowserRouter>
-    </>
+    <BrowserRouter>
+      <ContextProvider>
+        <NavBar storeName="Tienda Lattion" />
+        <Routes>
+          <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
+          <Route path="/product/:productId" element={<ItemDetailContainer greeting="Detalle del producto" />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </ContextProvider>
+    </BrowserRouter>
   );
 }
 export default App;
