@@ -7,12 +7,12 @@ import "./NavBar.css";
 
 const NavBar = ({ storeName }) => {
   const categories = [
-    { name: "Abstracto", id: 0, route: "/category/abstracto" },
-    { name: "Familiar", id: 1, route: "/category/familiar" },
-    { name: "Gestión", id: 2, route: "/category/gestion" },
-    { name: "Infantil", id: 3, route: "/category/infantil" },
-    { name: "Party", id: 4, route: "/category/party" },
-    { name: "Temático", id: 5, route: "/category/tematico" },
+    { name: "Abstracto", id: 0, route: "/category/Abstracto" },
+    { name: "Familiar", id: 1, route: "/category/Familiar" },
+    { name: "Gestión", id: 2, route: "/category/Gestión" },
+    { name: "Infantil", id: 3, route: "/category/Infantil" },
+    { name: "Party", id: 4, route: "/category/Party" },
+    { name: "Temático", id: 5, route: "/category/Temático" },
   ];
 
   return (
