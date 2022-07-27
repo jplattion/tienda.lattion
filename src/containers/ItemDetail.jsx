@@ -11,7 +11,6 @@ const ItemDetail = ({ product }) => {
   const onAdd = (count) => {
     setBuyCompleted(true);
     addItem({ ...product, qty: count });
-    console.log(product);
   };
 
   return (
