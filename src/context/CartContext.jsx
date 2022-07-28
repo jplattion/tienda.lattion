@@ -6,6 +6,7 @@ const { Provider } = cartContext;
 const ContextProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   const [quantity, setQuantity] = useState(0);
+  const [totalBuy, setTotalBuy] = useState(0);
 
   const getQuantity = () => {
     let qty = 0;
@@ -47,7 +48,7 @@ const ContextProvider = ({ children }) => {
     return products.reduce((total, product) => total + product.qty * product.store.price, 0);
   };
 
-  return <Provider value={{ products, addItem, removeItem, clearCart, quantity, totalSum }}>{children}</Provider>;
+  return <Provider value={{ products, addItem, removeItem, clearCart, quantity, totalSum, totalBuy }}>{children}</Provider>;
 };
 
 export default ContextProvider;

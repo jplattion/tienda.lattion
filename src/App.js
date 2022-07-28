@@ -6,6 +6,7 @@ import ItemDetailContainer from "./containers/ItemDetailContainer";
 import Cart from "./components/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ContextProvider from "./context/CartContext";
+import EndBuy from "./components/EndBuy";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/category/:categoryId" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
           <Route path="/product/:productId" element={<ItemDetailContainer greeting="Detalle del producto" />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/buyform" element={<EndBuy />} />
         </Routes>
       </ContextProvider>
     </BrowserRouter>

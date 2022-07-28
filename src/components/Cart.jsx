@@ -31,6 +31,9 @@ const cart = () => {
               Limpiar carrito
             </Button>
           </div>
+          <Link to="/buyform">
+            <Button variant="primary">Comprar</Button>
+          </Link>
         </>
       )}
     </>
