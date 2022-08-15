@@ -8,7 +8,7 @@ const CartWidget = () => {
   return (
     <>
       <ShoppingCartIcon style={styles.shoppingCart} />
-      {quantity === 0 ? <></> : <p>{quantity}</p>}
+      {quantity === 0 ? <></> : <p style={styles.cartText}>{quantity}</p>}
     </>
   );
 };
@@ -19,5 +19,9 @@ const styles = {
   shoppingCart: {
     fontSize: "32px",
     margin: "0 20px 0 20px",
+  },
+  cartText: {
+    textTransform: "uppercase",
+    textAlign: "center",
   },
 };

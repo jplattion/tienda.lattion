@@ -20,7 +20,7 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
   };
 
   return (
-    <>
+    <div style={styles.countContainer}>
       <div className="d-flex gap-3 m-2 justify-content-center">
         <Button variant="primary" onClick={substraction}>
           <Remove />
@@ -33,13 +33,18 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
       <Button style={styles.btnBuy} variant="success" onClick={addToCart}>
         Agregar al carrito
       </Button>
-    </>
+    </div>
   );
 };
 
 export default ItemCount;
 
 const styles = {
+  countContainer: {
+    margin: "auto",
+    width: "fit-content",
+  },
+
   count: {
     fontSize: "1.2rem",
     margin: "auto",

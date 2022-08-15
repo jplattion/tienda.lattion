@@ -29,14 +29,15 @@ const ItemListContainer = ({ greeting }) => {
   }, [categoryId]);
 
   return (
-    <>
-      <div style={styles.main}>
-        <h1 className="d-flex" style={styles.h1}>
-          {greeting}
-        </h1>
-        {show ? <Spinner /> : <ItemList products={products} />}
-      </div>
-    </>
+    <div style={styles.main}>
+      <h1 className="d-flex" style={styles.h1}>
+        {greeting}
+      </h1>
+      <h3 className="d-flex" style={styles.h3}>
+        Haz clic en el juego para ver los detalles
+      </h3>
+      {show ? <Spinner /> : <ItemList products={products} />}
+    </div>
   );
 };
 
@@ -47,11 +48,16 @@ const styles = {
     backgroundImage: `url(${backgroundMain})`,
     backgroundAttachment: "fixed",
     fontFamily: '"Fredoka", Arial, Helvetica, sans-serif',
-    height: `100%`,
+    height: `max-content`,
   },
-
   h1: {
-    padding: "2rem 0 2rem 0",
+    padding: "2rem 0 1rem 0",
+    textTransform: "uppercase",
+    justifyContent: "center",
+    backgroundColor: "rgba(220, 220, 220, 0.6)",
+  },
+  h3: {
+    padding: "0 0 2rem 0",
     textTransform: "uppercase",
     justifyContent: "center",
   },

@@ -12,11 +12,11 @@ function App() {
   return (
     <BrowserRouter>
       <ContextProvider>
-        <NavBar storeName="Tienda Lattion" />
+        <NavBar storeName="Dados y Meeples" />
         <Routes>
-          <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
-          <Route path="/category/:categoryId" element={<ItemListContainer greeting="Bienvenidos a Tienda Lattion" />} />
-          <Route path="/product/:productId" element={<ItemDetailContainer greeting="Detalle del producto" />} />
+          <Route path="/" element={<ItemListContainer greeting="Bienvenidos a Nuestra Juegoteca" />} />
+          <Route path="/category/:categoryId" element={<ItemListContainer greeting="Te ayudamos a elegir tu próximo juego de mesa" />} />
+          <Route path="/product/:productId" element={<ItemDetailContainer greeting="Detalles del Juego" />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/buyform" element={<EndBuy />} />
         </Routes>
