@@ -1,27 +1,24 @@
-# titulo 1
+# Dados y Meeples Store
 
-## titulo 2
+## Descripcion
 
-### titulo 3
+Esta es a pagina creada con fines didacticos para el curso de `React JS`, de la plataforma `CoderHouse`.
 
-paragrafos como p se escriben sin nada
+Toda la base de datos de productos (juegos) esta almacenada en `Firebase`
 
-Esto es una lista
+El proyecto esta publicado, puede ser accedido a traves del siguiente enlace https://dadosymeeplesstore.netlify.app/
 
-- paso 1
-- paso 2
-- paso 3
+Para poder visualisarlo de manera local, sigue los siguientes pasos:
 
-1. paso 1
-2. paso 2
-3. paso 3
+1. Descarga el proyecto del repositorio.
+2. Abri el directorio del proyecto usando el editor de código de tu preferencia.
+3. Usa el comando `npm start` para inicializar el servidor local.
+4. Si no se abre de manera automatica el navegador. Accede a http://localhost:3000 para visualiarlo.
 
-`texto sombreado`
+### La APP esta construida usando:
 
-> otro texto sombreado pero en linea completa
-
-links [Ir a google](www.google.com.ar)
-
-**Texto en negritas** ![un mensaje si la imagen no se muestra](./public/unaimagen.jpg)
-
-<h1 align="center">Titulo a centrar</h1>
+- React JS
+- Bootstrap
+- Firebase
+- SweetAlert2
+- React-Spinners
